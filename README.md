@@ -17,13 +17,13 @@ In contrast, the RF algorithm selected all features, including cellulose, hemice
 ## Model Training and Evaluation
 
 1. Update the folder and path name of the data set
-```
+``` python
 path = "/content/drive/MyDrive/Colab Notebooks/Data Science/Data Sci Case Study/"
 file_name = "dataBiomass_CE880.xlsx"
 ```
 
 2. Run the model to finetune hyperparameters
-```
+``` python
 def decisiontree_regressor():
 
   regressor = DecisionTreeRegressor(random_state=42)
@@ -68,13 +68,13 @@ def decisiontree_regressor():
   return search_dt_regressor,round(rmse,3),round(r2,3)
 ```
 3. Verify the model score by running unit test
-```
+``` python
 search_dt_regressor, rmse, r2 = decisiontree_regressor()
 assert math.isclose(rmse, 7.524)
 assert math.isclose(r2, 0.705)
 ```
 4. Run function to train the model
-```
+``` python
 def train(model, X_train):
 
   scaler_x = scaler.fit(X_train)
@@ -95,7 +95,7 @@ def train(model, X_train):
 ```
 
 5. Run function to predict data
-```
+``` python
 def predict(model, scaler_x, scaler_y, X_test):
 
   X_test_scaled = scaler_x.transform(X_test)
@@ -124,14 +124,14 @@ def predict(model, scaler_x, scaler_y, X_test):
 ```
 
 6. Verify the scores of predicted data by runnning unit test
-
-```
+ 
+``` python
 def test_prediction(r2,rmse,r2_expected,rmse_expected):
   np.testing.assert_array_equal(r2,r2_expected)
   np.testing.assert_array_equal(rmse,rmse_expected)
 ```
 
-```
+``` python
 model,scaler_x, scaler_y = train(search_dt_regressor,X_train[:,[1,7]])
 r2, rmse = predict(model,scaler_x, scaler_y,X_test[:,[1,7]])
 r2_expected = np.array([0.838, 0.686, 0.646, 0.840, 0.685, 0.443, 0.242])
