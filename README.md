@@ -1,4 +1,4 @@
-# Feature-Driven Optimization of Syngas Production in Biomass Gasifiers using Machine Learning
+<h1 align="center"> Feature-Driven Optimization of Syngas Production in Biomass Gasifiers using Machine Learning </h1>
 
 <p align="center">
 Feature-Driven Optimization of Syngas Production in Biomass Gasifiers using Machine Learning <a href="https://github.com/phrugsa-limbunlom/CE880_Case_Study_MIMO_Biosyngas_Prediction/blob/main/%5B2311569%5D_CE880_Case_Study.pdf">(Paper)</a>
